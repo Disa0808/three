@@ -1,0 +1,7 @@
+    li { list-style-image: url('../img/point.gif') }
+
+    li.Expand.Open { list-style-image: url('../img/minus.gif') }
+    li.Expand.Open ul { display: block }  
+
+    li.Expand.Close { list-style-image: url('../img/plus.gif') }
+    li.Expand.Close ul { display: none } /* выставить в none */   

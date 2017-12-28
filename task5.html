@@ -4,20 +4,7 @@
 <head>
 	<title>Раскрывающейся списка</title>
 	<meta charset="utf-8">
-	<style type="text/css">
-
-		li { list-style-image: url('img/point.gif') }
-
-		li.Expand.Open { list-style-image: url('img/minus.gif') }
-		li.Expand.Open ul { display: block }  
-
-		li.Expand.Close { list-style-image: url('img/plus.gif') }
-		li.Expand.Close ul { display: none } /* выставить в none */				
-
-
-
-	</style>
-	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -66,55 +53,6 @@
 		</li>
 	</ul>
 
-<script>
-
-		function setPlusIcon(){
-			var i,
-					el;
-			var treeLis = document.getElementsByTagName('li');
-	
-
-			for(i = 0, max = treeLis.length; i < max; i++){
-					if(treeLis[i].getElementsByTagName('ul').length){
-						treeLis[i].classList.add('Expand');
-						treeLis[i].classList.add('Open');
-				}
-				
-			}
-
-			var mainUl = document.getElementsByTagName('ul')[0];
-			mainUl.addEventListener('click',aClick)
-		}
-
-
-
-
-
-		setPlusIcon();
-		/*
-			Опишите функцию aClick(), которая обрабатывает щелчок по ссылке
-			1. Получите объект - ссылку, по которой был сделан щелчок 
-			2. Найдите родительский li
-			3. Найдите вложенный список
-			4. Если вложенных списков нет - разрешите переход по ссылке
-			5. Назначьте вложенному списку нужные свойства и поменяйте иконку
-			6. Запретите переход по ссылке
-		*/
-		function aClick(e){
-			var target = e.target;
-			if (target.tagName != 'A'){
-				return;
-			}
-			if(target.parentElement.getElementsByTagName('ul').length){
-				e.preventDefault();				
-				target.parentElement.classList.toggle('Open');
-				target.parentElement.classList.toggle('Close');
-
-			} 
-
-
-		}	
-		
-	</script>	
+<script src="js/javascript.js"></script>	
 </body>
 </html>
